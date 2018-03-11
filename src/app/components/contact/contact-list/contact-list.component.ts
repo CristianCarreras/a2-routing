@@ -18,11 +18,15 @@ export class ContactListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.contacts = this.contactsService.list();
+    this.contactsService.list()
+      .subscribe(contacts => this.contacts = contacts);
   }
 
   showContactDetails(id: number) {
     this.router.navigate(['/contacts', id]);
   }
 
+  editContact(id: number) {
+    this.router.navigate(['/contacts', id, 'edit']);
+  }
 }

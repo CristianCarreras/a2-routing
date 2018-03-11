@@ -3,6 +3,7 @@
     <tr>
       <th>id</th>
       <th>Name</th>
+      <th>Email</th>
       <th></th>
     </tr>
   </thead>
@@ -10,7 +11,11 @@
     <tr *ngFor="let contact of contacts">
       <td>{{ contact.id }}</td>
       <td>{{ contact.name }}</td>
-      <td><button (click)="showContactDetails(contact.id)">Details</button></td>
+      <td>{{ contact.email }}</td>
+      <td>
+        <button (click)="showContactDetails(contact.id)">Details</button>
+        <button (click)="editContact(contact.id)">Edit</button>
+      </td>
     </tr>
   </tbody>
 </table>

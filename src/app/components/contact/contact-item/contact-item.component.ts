@@ -16,9 +16,11 @@ export class ContactItemComponent implements OnInit {
     private contactsService: ContactsService) { }
 
   ngOnInit() {
-    this.routes.params.subscribe(params => {
-      console.log(params);
-      this.contact = this.contactsService.get(Number(params['id']));
+    this.routes
+      .parent
+      .params.subscribe(params => {
+        this.contactsService.get(Number(params['id']))
+          .subscribe(contact => this.contact = contact);
     });
   }
 

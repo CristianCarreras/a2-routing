@@ -3,14 +3,17 @@ import { Contact } from './../models/contact.model';
 export const contacts: Array<Contact> = [
     {
         id: 1,
-        name: 'Carlos'
+        name: 'Carlos',
+        email: 'carlos@example.org'
     },
     {
         id: 2,
-        name: 'Julio'
+        name: 'Julio',
+        email: 'julio@example.org'
     },
     {
         id: 3,
-        name: 'María'
+        name: 'María',
+        email: 'maria@example.org'
     }
 ];

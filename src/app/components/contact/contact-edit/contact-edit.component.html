@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmitEditForm(editForm)" #editForm="ngForm">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" [(ngModel)]="contact.name" #name="ngModel" required>
+    <ul *ngIf="name.errors && name.touched">
+      <li *ngIf="name.errors.required">Name is required</li>
+    </ul>
+  </div>
+  <button type="submit" [disabled]="!editForm.valid">Save</button>
+</form>
